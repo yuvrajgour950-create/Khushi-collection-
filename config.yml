@@ -1,0 +1,62 @@
+
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "products"
+    label: "Products"
+    folder: "content/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Price", name: "price", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Image", name: "image", widget: "image"}
+
+  - name: "offers"
+    label: "Offers"
+    folder: "content/offers"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Details", name: "details", widget: "text"}
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "content/pages/home.json"
+        label: "Home Page"
+        name: "home"
+        fields:
+          - {label: "Hero Title", name: "hero_title", widget: "string"}
+          - {label: "Hero Tagline", name: "hero_tagline", widget: "string"}
+          - {label: "Hero Image", name: "hero_image", widget: "image"}
+      - file: "content/pages/about.json"
+        label: "About Page"
+        name: "about"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "text"}
+      - file: "content/pages/contact.json"
+        label: "Contact Page"
+        name: "contact"
+        fields:
+          - {label: "Email", name: "email", widget: "string"}
+          - {label: "Phone", name: "phone", widget: "string"}
+
+  - name: "settings"
+    label: "Settings"
+    files:
+      - file: "content/settings.json"
+        label: "Site Settings"
+        name: "settings"
+        fields:
+          - {label: "Site Title", name: "site_title", widget: "string"}
+          - {label: "Logo", name: "logo", widget: "image"}
+          - {label: "Footer Text", name: "footer_text", widget: "string"}
